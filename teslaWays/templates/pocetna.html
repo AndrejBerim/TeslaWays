@@ -1,75 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../static/mainApp/sass/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <title>Tesla Ways</title>
-</head>
-<body>
-    <div class="navs-wrapper">
-        <nav class="nav-primary">
-            <a href="#"><img class="logo" src="../../../SLIKE/image 3.jpg" alt="Tesla Ways logo"></a>
-            <div class="main-menu">
-                <ul class="pages">
-                    <li><a href="#">Početna</a></li>
-                    <li><a href="#">O projektu</a></li>
-                    <li><a href="#">O nama</a></li>
-                    <li><a href="#">Novosti i zanimljivosti</a></li>
-                    <li><a href="#">Kontakt</a></li>
-                </ul>
-                <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
-            </div>
-            <img class="tesla-img" src="../../../SLIKE/Nikola Tesla.png" alt="">
-        </nav>   
-        <nav class="nav-secondary">
-            <h1>Srbija</h1>
-            <ul class="sec-menu">
-                <li class="city"><i class="fa-solid fa-angle-right"></i>Beograd</li>
-                <ul>
-                    <li><a href="#">Šta posetiti</a></li>
-                    <li><a href="#">Gde jesti</a></li>
-                    <li><a href="#">Gde spavati</a></li>
-                </ul>
-                <li class="city"><i class="fa-solid fa-angle-right"></i>Zapadna Srbija</li>
-                <ul>
-                    <li><a href="#">Šta posetiti</a></li>
-                    <li><a href="#">Gde jesti</a></li>
-                    <li><a href="#">Gde spavati</a></li>
-                </ul>
-                <li class="city"><i class="fa-solid fa-angle-right"></i>Istočna Srbija</li>
-                <ul>
-                    <li><a href="#">Šta posetiti</a></li>
-                    <li><a href="#">Gde jesti</a></li>
-                    <li><a href="#">Gde spavati</a></li>
-                </ul>
-                <li class="city"><i class="fa-solid fa-angle-right"></i>Vojvodina</li>
-                <ul>
-                    <li><a href="#">Šta posetiti</a></li>
-                    <li><a href="#">Gde jesti</a></li>
-                    <li><a href="#">Gde spavati</a></li>
-                </ul>
-            </ul>
-            <div class="nav-info">
-                <button>Prijavi se na Newsletter</button>
-                <div class="social-icons">
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                </div>
-                <p>Tesla Ways&copy; 2022</p>
-            </div>
-        </nav>
-    </div>
+{% extends "main.html" %}
+{% load static %}
+
+{% block title %}
+POCETNA
+{% endblock title %}
+
+{% block content %}
+
 
     <main class="main-content">
         <div class="container-slider">
             <div class="slides">
-                <img src="../../../SLIKE/Beograd.jpg" alt="Mapa Beograda">
-                <img src="../../../SLIKE/Srbija.jpg" alt="Mapa Srbije">
+                <img src="{% static '' %}" alt="Mapa Beograda">
+                <img src="{% static '' %}" alt="Mapa Srbije">
             </div>
             <div class="bullets">
                 <div class="bullet"></div>
@@ -77,8 +20,4 @@
             </div>
         </div>
     </main>
-    
-    <script src="https://kit.fontawesome.com/399258c3a4.js" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
-</body>
-</html>
+{% endblock content %}

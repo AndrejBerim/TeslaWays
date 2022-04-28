@@ -5,7 +5,9 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.main_page, name="main_page")
+    path('', views.main_page, name="main_page"),
+    path('p/', views.pocetna, name="pocetna"),
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,

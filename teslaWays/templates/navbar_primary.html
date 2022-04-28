@@ -1,9 +1,10 @@
 <div class="navs-wrapper">
+
     <nav class="nav-primary">
         <a href="#"><img class="logo" src="../../../SLIKE/image 3.jpg" alt="Tesla Ways logo"></a>
         <div class="main-menu">
             <ul class="pages">
-                <li><a href="#">Početna</a></li>
+                <li><a href="{% url 'main_page' %}">Početna</a></li>
                 <li><a href="#">O projektu</a></li>
                 <li><a href="#">O nama</a></li>
                 <li><a href="#">Novosti i zanimljivosti</a></li>
@@ -13,6 +14,7 @@
         </div>
         <img class="tesla-img" src="../../../SLIKE/Nikola Tesla.png" alt="">
     </nav>
+
     <nav class="nav-secondary">
         <h1>Srbija</h1>
         <ul class="sec-menu">
@@ -50,4 +52,18 @@
             <p>Tesla Ways&copy; 2022</p>
         </div>
     </nav>
+
+    <main class="main-content">
+        <div class="container-slider">
+            <div class="slides">
+                <img src="#" alt="Mapa Beograda">
+                <img src="#" alt="Mapa Srbije">
+            </div>
+            <div class="bullets">
+                <div class="bullet"></div>
+                <div class="bullet"></div>
+            </div>
+        </div>
+    </main>
+
 </div>
