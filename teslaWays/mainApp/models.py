@@ -29,7 +29,7 @@ class Place(models.Model):
     name = models.CharField(max_length=40)
     address = models.CharField(max_length=40, null=True, blank=True)
     website = models.CharField(max_length=40, null=True, blank=True)
-    type = models.CharField(
+    type_of_place = models.CharField(
         max_length=10, choices=TYPE_CHOICES, null=True, blank=True)
     longitude = models.FloatField(default=20.468565, blank=True)
     latitude = models.FloatField(default=44.796942, blank=True)
@@ -49,7 +49,7 @@ class News(models.Model):
     news_image = models.ImageField(upload_to='uploads/', null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
-    place_news = models.ManyToManyField(Place)
+    place_of_news = models.ManyToManyField(Place)
 
     class Meta:
         ordering = ['-date_created']
