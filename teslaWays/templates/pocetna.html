@@ -2,17 +2,20 @@
 {% load static %}
 
 {% block title %}
-<h2>Pocetna strana</h2>
+Početna
 {% endblock title %}
 
 {% block content %}
-    
 
     <main class="main-content">
         <div class="container-slider">
             <div class="slides">
-                <img src="#" alt="Mapa Beograda">
-                <img src="#" alt="Mapa Srbije">
+                <img src="{% static 'images\Beograd.jpg' %}" alt="Mapa Beograda">
+                <img src="{% static 'images\Srbija.jpg' %}" alt="Mapa Srbije">
+            </div>
+            <div class="btns-slide">
+                <button class="btn-slide prev"><i class="fa-solid fa-angle-left"></i></button>
+                <button class="btn-slide next"><i class="fa-solid fa-angle-right"></i></button>
             </div>
             <div class="bullets">
                 <div class="bullet"></div>
@@ -20,6 +23,5 @@
             </div>
         </div>
     </main>
-
 
 {% endblock content %}

@@ -1,7 +1,8 @@
+{%load static%}
 <div class="navs-wrapper">
 
     <nav class="nav-primary">
-        <a href="#"><img class="logo" src="../../../SLIKE/image 3.jpg" alt="Tesla Ways logo"></a>
+        <a href="#"><img class="logo" src="{% static 'images\logo.jpg' %}" alt="Tesla Ways logo"></a>
         <div class="main-menu">
             <ul class="pages">
                 <li><a href="{% url 'main_page' %}">Početna</a></li>
@@ -12,7 +13,7 @@
             </ul>
             <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
         </div>
-        <img class="tesla-img" src="../../../SLIKE/Nikola Tesla.png" alt="">
+        <img class="tesla-img" src="{% static 'images\NikolaTesla.png' %}" alt="Nikola Tesla">
     </nav>
 
     <nav class="nav-secondary">
