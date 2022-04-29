@@ -4,11 +4,10 @@
 {% block content %}
 
 {% for news in all_news %}
-    <div>
+
     <h4>{{ news.title }}</h4>
     <p>{{ news.content }}</p>
 
-    </div>
 {% endfor %}
 
 {% endblock content %}
