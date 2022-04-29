@@ -14,7 +14,7 @@ class Member(models.Model):
     is_active = models.BooleanField(default=True)
 
     class Meta:
-        ordering = ['-date_created']
+        ordering = ['-date_updated']
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
@@ -29,6 +29,7 @@ class Place(models.Model):
     name = models.CharField(max_length=40)
     address = models.CharField(max_length=40, null=True, blank=True)
     website = models.CharField(max_length=40, null=True, blank=True)
+    description = models.TextField(default="Opis")
     type_of_place = models.CharField(
         max_length=10, choices=TYPE_CHOICES, null=True, blank=True)
     longitude = models.FloatField(default=20.468565, blank=True)
@@ -37,7 +38,7 @@ class Place(models.Model):
     date_updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ['-date_created']
+        ordering = ['-date_updated']
 
     def __str__(self):
         return self.name
@@ -49,10 +50,10 @@ class News(models.Model):
     news_image = models.ImageField(upload_to='uploads/', null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
-    place_of_news = models.ManyToManyField(Place)
+    place_of_news = models.ManyToManyField(Place, blank=True)
 
     class Meta:
-        ordering = ['-date_created']
+        ordering = ['-date_updated']
 
     def __str__(self):
         return self.title
