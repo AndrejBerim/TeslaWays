@@ -1,0 +1,13 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+
+{% for news in all_news %}
+
+    <h4>{{ news.title }}</h4>
+    <p>{{ news.content }}</p>
+
+{% endfor %}
+
+{% endblock content %}

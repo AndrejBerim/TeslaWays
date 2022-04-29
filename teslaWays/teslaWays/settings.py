@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
 
+    'django_extensions',
     'mainApp.apps.MainappConfig',
 ]
 
@@ -77,6 +78,7 @@ WSGI_APPLICATION = 'teslaWays.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+
 
 DATABASES = {
     'default': {
