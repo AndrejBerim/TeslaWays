@@ -5,7 +5,7 @@ from .models import *
 
 def main_page(request):
     context = {}
-    return render(request, 'main.html', context)
+    return render(request, 'pocetna.html', context)
 
 
 def all_news(request):

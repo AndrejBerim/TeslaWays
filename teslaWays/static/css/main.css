@@ -125,6 +125,7 @@ ul.show {
     max-width: 770px;
     margin-left: 460px;
     padding: 25px 20px;
+
 }
 
 .container-slider {
@@ -144,8 +145,12 @@ ul.show {
 
 .slides img {
     width: 100%;
-    object-fit: fill;
-    object-position: center;
-    transition: all 0.5s ease-in-out;
-    transition-delay: 500ms;
+}
+
+/*VESTI*/
+
+.each-news {
+    padding: 10px;
+    border: 1px solid black;
+
 }
