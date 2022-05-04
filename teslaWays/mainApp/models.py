@@ -36,6 +36,8 @@ class Place(models.Model):
     latitude = models.FloatField(default=44.796942, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
+    city = models.ForeignKey(
+        'City', on_delete=models.CASCADE, null=True, blank=True)
 
     class Meta:
         ordering = ['-date_updated']
@@ -57,3 +59,21 @@ class News(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Region(models.Model):
+    region = models.CharField(max_length=50)
+    date_created = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return str(self.region)
+
+
+class City(models.Model):
+    city = models.CharField(max_length=50,  null=True, blank=True)
+    date_created = models.DateTimeField(auto_now=True)
+    city_area = models.ForeignKey(
+        Region, on_delete=models.CASCADE, null=True, blank=True)
+
+    def __str__(self):
+        return str(self.city)

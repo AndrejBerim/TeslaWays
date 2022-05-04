@@ -5,11 +5,11 @@ from .models import *
 
 def main_page(request):
     context = {}
-    return render(request, 'main.html', context)
+    return render(request, 'pocetna.html', context)
 
 
 def all_news(request):
-    all_news = News.objects.all()
+    all_news = News.objects.all().values()
 
     context = {
         'all_news': all_news,
