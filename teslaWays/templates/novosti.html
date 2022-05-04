@@ -2,12 +2,13 @@
 {% load static %}
 
 {% block content %}
-
-{% for news in all_news %}
-
-    <h4>{{ news.title }}</h4>
-    <p>{{ news.content }}</p>
-
-{% endfor %}
-
+    {% for news in all_news %}
+        <div>
+            <h4>{{ news.title }}</h4>
+            <p>{{ news.content }}</p>
+            <img width="200"  src="{{ news.news_image.url }}">
+            <p>{{ news.date_created }}</p>
+            <br>
+        </div>
+    {% endfor %}
 {% endblock content %}
