@@ -125,6 +125,7 @@ ul.show {
     max-width: 770px;
     margin-left: 460px;
     padding: 25px 20px;
+
 }
 
 .slider-container{
@@ -146,6 +147,7 @@ ul.show {
 
 .slides img {
     width: 100%;
+<<<<<<< HEAD
     object-fit: scale-down;
     transition: all 0.5s ease-in-out;
     transition-delay: 500ms;
@@ -197,4 +199,14 @@ ul.show {
     background-color: var(--dark-blue);
     color: white;
     cursor: pointer;
+=======
+}
+
+/*VESTI*/
+
+.each-news {
+    padding: 10px;
+    border: 1px solid black;
+
+>>>>>>> c7d5b5e135977a69a5a7795d5a060ec66c44fff2
 }
