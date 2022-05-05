@@ -152,5 +152,49 @@ ul.show {
 .each-news {
     padding: 10px;
     border: 1px solid black;
+    margin: 20px;
 
 }
+/* NEWLETTER BUTTON*/
+.newsletter-button {
+    background-color: #0A2E36;
+    color: white;
+    height: 30px;
+    width: 160px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+@media screen and (min-width:480px) and (max-width:800px) {
+    /* Target landscape smartphones, portrait tablets, narrow desktops*/
+    .navs-wrapper {
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-primary {
+
+        position: relative;
+        height: 73px;
+        width: 100%;
+    }
+    .nav-secondary {
+        position: absolute;
+        height: 143px;
+        width: 100%;
+        margin-top: 73px;
+    }
+    .tesla-img {
+        display: none;
+    }
+    .slides {
+        width: 100%;
+        height: 350px;
+        position: absolute;
+    }
+    }
+
+@media screen and (max-width:479px) {
+    /* Target portrait smartphones */
+    
+    }
