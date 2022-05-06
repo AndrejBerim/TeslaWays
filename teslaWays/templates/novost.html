@@ -1,0 +1,10 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="single_news main-content">
+        <h2 class="novost_title">{{single_news.title}}</h2>
+        <p class="novost_content">{{ single_news.content }}</p>
+        <img src="{{ single_news.news_image.url }}" alt="">
+    </div>
+{% endblock content %}

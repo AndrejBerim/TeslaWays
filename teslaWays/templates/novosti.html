@@ -4,16 +4,15 @@
 {% block title %} Novosti {% endblock title %}
 
 {% block content %}
-<div class="main-content">
-{% for news in all_news %}
-    <div class="each-news">
-        <h4>{{ news.title }}</h4>
-        <p>{{ news.content }}</p>
-        <p>{{ news.date_created }}</p>
-        <!-- <p>{{ first_sentance }}</p> -->
-        <img src="{{ news.news.image.url }}" alt="">
+    <div class="main-content">
+    {% for news in all_news %}
+        <div class="each-news">
+            <p style="text-align: right;">{{ news.date_created }}</p>
+            <h2><a href="{% url 'single_news' news.id %}">{{ news.title }}</a></h2>
+            <p class="each_paragraph">{{ news.content|truncatewords:25 }}<a href="{% url 'single_news' news.id %}"> procitajte ceo tekst</a></p>
+            <a href="{% url 'single_news' news.id %}"><img src="{{ news.news_image.url }}" alt="News photod"></a>
+        </div>
+    {% endfor %}
     </div>
-{% endfor %}
-</div>
 {% endblock content %}
 

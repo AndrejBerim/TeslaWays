@@ -205,8 +205,9 @@ ul.show {
 
 .each-news {
     padding: 10px;
-    border: 1px solid black;
+    border: 1px solid rgb(0, 64, 240);
     margin: 20px;
+    
 
 }
 /* NEWLETTER BUTTON*/
@@ -219,6 +220,24 @@ ul.show {
     border-radius: 2px;
     cursor: pointer;
 }
+
+/* ALL NEWS FORMATING */
+
+
+.novost_title {
+    color: #000;
+}
+
+.novost_content {
+    margin-left: 200px;
+}
+
+.each_paragraph {
+    position: relative;
+    margin-left: 300px;
+}
+
+
 
 @media screen and (min-width:480px) and (max-width:800px) {
     /* Target landscape smartphones, portrait tablets, narrow desktops*/
@@ -246,9 +265,16 @@ ul.show {
         height: 350px;
         position: absolute;
     }
+
+    .single_news {
+        margin-top: 50px;
+        margin-left: 500px;
+        margin-right: 60px;
+        margin-bottom: 50px;
     }
 
-@media screen and (max-width:479px) {
-    /* Target portrait smartphones */
-    
-    }
+
+}
+
+
+

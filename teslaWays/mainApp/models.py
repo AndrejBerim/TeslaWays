@@ -49,7 +49,8 @@ class Place(models.Model):
 class News(models.Model):
     title = models.CharField(max_length=50)
     content = models.TextField(null=True, blank=True)
-    news_image = models.ImageField(upload_to='uploads/', null=True, blank=True)
+    news_image = models.ImageField(
+        upload_to='staticfiles/img', null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     place_of_news = models.ManyToManyField(Place, blank=True)
