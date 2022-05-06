@@ -186,9 +186,24 @@ ul.show {
 
 /* Map */
 
+.openstreet-map {
+    position: relative;
+}
+
 #map {
     height: 400px;
     width: 100%;
+}
+
+.map-filters {
+    height: 120px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    right: 0;
+    bottom: 50%;
+    transform: translateY(50%);
 }
 
 .openstreet-map button {
@@ -198,7 +213,6 @@ ul.show {
     background-color: var(--dark-blue);
     color: white;
     cursor: pointer;
-
 }
 
 /*VESTI*/
@@ -221,6 +235,7 @@ ul.show {
     cursor: pointer;
 }
 
+
 /* ALL NEWS FORMATING */
 
 
@@ -236,6 +251,9 @@ ul.show {
     position: relative;
     margin-left: 300px;
 }
+
+
+
 
 
 
@@ -272,6 +290,7 @@ ul.show {
         margin-right: 60px;
         margin-bottom: 50px;
     }
+
 
 
 }
