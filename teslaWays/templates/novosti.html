@@ -1,17 +1,16 @@
 {% extends "main.html" %}
 {% load static %}
 
-{% block title %}
-    <p>Novosti</p>
-{% endblock title %}
+{% block title %} Novosti {% endblock title %}
 
 {% block content %}
 <div class="main-content">
 {% for news in all_news %}
     <div class="each-news">
-        <h4 style="padding:10px 0px;">{{ news.title }}</h4>
-        <p style="padding: 0px 40px;">{{ news.content }}</p>
+        <h4>{{ news.title }}</h4>
+        <p>{{ news.content }}</p>
         <p>{{ news.date_created }}</p>
+        <!-- <p>{{ first_sentance }}</p> -->
         <img src="{{ news.news.image.url }}" alt="">
     </div>
 {% endfor %}
