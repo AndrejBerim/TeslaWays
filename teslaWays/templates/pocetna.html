@@ -8,30 +8,9 @@ Početna
 {% block content %}
 
     <main class="main-content">
-        <div>
-            <div class="slider-container">
-                <div class="slides">
-                    <img src="{% static 'images\Beograd.jpg' %}" class="slides-img" alt="Mapa Beograda">
-                    <img src="{% static 'images\Srbija.jpg' %}" class="slides-img" alt="Mapa Srbije">
-                </div>
-                <div class="btns-slide">
-                    <button class="btn-slide prev"><i class="fa-solid fa-angle-left fa-xl" style="color: white;"></i></button>
-                    <button class="btn-slide next"><i class="fa-solid fa-angle-right fa-xl" style="color: white;"></i></button>
-                </div>
-            </div>
-            <div class="bullets">
-                <div class="bullet" data-number="1"></div>
-                <div class="bullet" data-number="2"></div>
-            </div>
-        </div>
+        {% include 'slider.html' %}
 
-        <div class="openstreet-map">
-            <div id="map">
-            </div>
-            <button>Hoteli</button>
-            <button>Znamenitosti</button>
-            <button>Restorani</button>
-        </div>
+        {% include 'map.html' %}
     </main>
 
     <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>

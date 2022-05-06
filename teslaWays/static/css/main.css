@@ -147,7 +147,6 @@ ul.show {
 
 .slides img {
     width: 100%;
-<<<<<<< HEAD
     object-fit: scale-down;
     transition: all 0.5s ease-in-out;
     transition-delay: 500ms;
@@ -187,9 +186,24 @@ ul.show {
 
 /* Map */
 
+.openstreet-map {
+    position: relative;
+}
+
 #map {
     height: 400px;
     width: 100%;
+}
+
+.map-filters {
+    height: 120px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    right: 0;
+    bottom: 50%;
+    transform: translateY(50%);
 }
 
 .openstreet-map button {
@@ -199,7 +213,6 @@ ul.show {
     background-color: var(--dark-blue);
     color: white;
     cursor: pointer;
-=======
 }
 
 /*VESTI*/
@@ -208,5 +221,5 @@ ul.show {
     padding: 10px;
     border: 1px solid black;
 
->>>>>>> c7d5b5e135977a69a5a7795d5a060ec66c44fff2
 }
+
