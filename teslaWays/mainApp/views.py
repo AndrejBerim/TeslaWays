@@ -10,6 +10,7 @@ def main_page(request):
 
 def all_news(request):
     all_news = News.objects.all()
+
     context = {
         'all_news': all_news,
     }
@@ -17,8 +18,9 @@ def all_news(request):
 
 
 def single_news(request, pk):
-    single_news = News.objects.get(id=pk)
+    novost = News.objects.get(id=pk)
+
     context = {
-        'single_news': single_news,
+        'novost': novost,
     }
     return render(request, 'novost.html', context)

@@ -3,14 +3,20 @@
 
 {% block title %} Novosti {% endblock title %}
 
+
 {% block content %}
     <div class="main-content">
+        {% include 'slider.html' %}
+        <h2>NOVOSTI</h2>
     {% for news in all_news %}
         <div class="each-news">
-            <p style="text-align: right;">{{ news.date_created }}</p>
-            <h2><a href="{% url 'single_news' news.id %}">{{ news.title }}</a></h2>
-            <p class="each_paragraph">{{ news.content|truncatewords:25 }}<a href="{% url 'single_news' news.id %}"> procitajte ceo tekst</a></p>
-            <a href="{% url 'single_news' news.id %}"><img src="{{ news.news_image.url }}" alt="News photod"></a>
+            <a href="{% url 'single_news' news.id %}"><img src="{{ news.news_image.url }}" alt="News photo"></a>
+            <div>
+                <p class="novosti-date">{{ news.date_created|date:"j. m. Y" }}</p>
+                <h3 class="novosti-title"><a href="{% url 'single_news' news.id %}">{{ news.title }}</a></h3>
+                <p class="each_paragraph"><i>{{ news.content|truncatewords:13 }}</i></p>
+                <a  href="{% url 'single_news' news.id %}" class="ceo-tekst">Ceo tekst</a>
+            </div>
         </div>
     {% endfor %}
     </div>
