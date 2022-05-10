@@ -2,11 +2,12 @@
 {% load static %}
 
 {% block title %} Novost {% endblock title %}
-
+    
 {% block content %}
     <div class="single_news main-content">
+        {% include 'slider.html' %}
         <h2 class="novost_title">{{ novost.title }}</h2>
+        <img class="single_image" src="{{ novost.news_image.url }}" width=300px alt="No image">
         <p class="novost_content">{{ novost.content }}</p>
-        <img src="{{ novost.news_image.url }}" alt="No image">
     </div>
 {% endblock content %}
