@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from . models import News
+from . models import News, Region, City, Place
 # Create your views here.
 
 
@@ -24,3 +24,12 @@ def single_news(request, pk):
         'novost': novost,
     }
     return render(request, 'novost.html', context)
+
+
+def all_regions(request):
+    regions = Region.objects.all()
+
+    context = {
+        'regions': regions,
+    }
+    return render(request, 'navbar_primary.html', context)

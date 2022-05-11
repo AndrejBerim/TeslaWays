@@ -7,23 +7,27 @@
 {% block content %}
     <div class="main-content">
         {% include 'slider.html' %}
+        <br>
         <h2>NOVOSTI</h2>
+        <hr>
+        <br>
+
     {% for news in all_news %}
         <div class="each-news">
             <a href="{% url 'single_news' news.id %}"><img src="{{ news.news_image.url }}" width=260px alt="News photo"></a>
             <div>
                 <div class="region_date">
-                    <p class="novosti_date">{{ news.date_created|date:"j/ m/ Y" }}</p>
+                    <p class="novosti_date">{{ news.date_created|date:"j/m/Y" }}</p>
                     {% if news.news_region != None %}
-                        <p class="novosti_region">| {{ news.news_region }}</p>
+                        <p class="novosti_region">{{ news.news_region }}</p>
                     {% endif %}
-                    
                 </div>
                 <h3 class="novosti-title"><a href="{% url 'single_news' news.id %}">{{ news.title }}</a></h3>
                 <p class="each_paragraph"><i>{{ news.content|truncatewords:13 }}</i></p>
                 <a  href="{% url 'single_news' news.id %}" class="ceo-tekst">Ceo tekst</a>
             </div>
         </div>
+        <hr>
     {% endfor %}
     </div>
 {% endblock content %}

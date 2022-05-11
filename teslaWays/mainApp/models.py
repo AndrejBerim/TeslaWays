@@ -1,4 +1,5 @@
 from django.db import models
+from multiselectfield import MultiSelectField
 
 # Create your models here.
 
@@ -30,13 +31,15 @@ class Place(models.Model):
     address = models.CharField(max_length=60, null=True, blank=True)
     website = models.CharField(max_length=40, null=True, blank=True)
     description = models.TextField(default="Opis")
-    type_of_place = models.CharField(
-        max_length=10, choices=TYPE_CHOICES, null=True, blank=True)
+    type_of_place = MultiSelectField(
+        choices=TYPE_CHOICES, max_choices=3, max_length=10, null=True, blank=True)
     longitude = models.FloatField(default=20.468565, blank=True)
     latitude = models.FloatField(default=44.796942, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
-    city = models.ForeignKey(
+    place_region = models.ForeignKey(
+        'Region', on_delete=models.CASCADE, blank=True, null=True)
+    place_city = models.ForeignKey(
         'City', on_delete=models.CASCADE, null=True, blank=True)
 
     class Meta:
