@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from . models import News, Region, City, Place
+# from geopy.geocoders import Nominatim
+from mainApp.models import *
 # Create your views here.
 
 
@@ -26,10 +27,20 @@ def single_news(request, pk):
     return render(request, 'novost.html', context)
 
 
+def countries(request):
+    countries = Country.objects.all().values()
+    print(countries)
+
+    context = {
+        'countries': countries,
+    }
+    return render(request, 'navbar_secondary.html', context)
+
+
 def all_regions(request):
     regions = Region.objects.all()
 
     context = {
-        'regions': regions,
+        'all_regions': regions,
     }
-    return render(request, 'navbar_primary.html', context)
+    return render(request, 'navbar_secondary.html', context)

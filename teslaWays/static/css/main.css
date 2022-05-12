@@ -109,6 +109,11 @@ nav {
 
 .city {
     margin-bottom: 12px;
+    cursor: pointer;
+}
+.city:hover {
+    font-size: large;
+    font-weight: bolder;
 }
 
 .nav-info {

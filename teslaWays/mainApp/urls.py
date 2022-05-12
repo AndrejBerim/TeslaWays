@@ -8,7 +8,7 @@ urlpatterns = [
     path('', views.main_page, name="main_page"),
     path('novosti/', views.all_news, name="news_page"),
     path('novosti/novost/<str:pk>/', views.single_news, name='single_news'),
-    path('', views.all_regions, name="regions_page"),
+
 
 ]
 

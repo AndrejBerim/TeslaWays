@@ -69,19 +69,30 @@ class News(models.Model):
         return self.title
 
 
+class Country(models.Model):
+    country_name = models.CharField(
+        max_length=50, default='Srbija', null=True, blank=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return str(self.country_name)
+
+
 class Region(models.Model):
-    region = models.CharField(max_length=50)
+    region_name = models.CharField(max_length=50)
     date_created = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return str(self.region)
+        return self.region_name
 
 
 class City(models.Model):
-    city = models.CharField(max_length=50,  null=True, blank=True)
+    city_name = models.CharField(max_length=50,  null=True, blank=True)
     date_created = models.DateTimeField(auto_now=True)
-    city_area = models.ForeignKey(
+    city_region = models.ForeignKey(
         Region, on_delete=models.CASCADE, null=True, blank=True)
+    city_country = models.ForeignKey(
+        Country, on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
-        return str(self.city)
+        return str(self.city_name)
