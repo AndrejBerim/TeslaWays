@@ -38,9 +38,9 @@ def countries(request):
 
 
 def all_regions(request):
-    regions = Region.objects.all()
+    all_region = Region.objects.all()
 
     context = {
-        'all_regions': regions,
+        'all_region': all_region,
     }
     return render(request, 'navbar_secondary.html', context)

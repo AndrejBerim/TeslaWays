@@ -32,7 +32,7 @@ class Place(models.Model):
     website = models.CharField(max_length=40, null=True, blank=True)
     description = models.TextField(default="Opis")
     type_of_place = MultiSelectField(
-        choices=TYPE_CHOICES, max_choices=3, max_length=10, null=True, blank=True)
+        choices=TYPE_CHOICES, max_choices=3, max_length=20, null=True, blank=True)
     longitude = models.FloatField(default=20.468565, blank=True)
     latitude = models.FloatField(default=44.796942, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
@@ -71,7 +71,7 @@ class News(models.Model):
 
 class Country(models.Model):
     country_name = models.CharField(
-        max_length=50, default='Srbija', null=True, blank=True)
+        max_length=50, null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -81,6 +81,8 @@ class Country(models.Model):
 class Region(models.Model):
     region_name = models.CharField(max_length=50)
     date_created = models.DateTimeField(auto_now=True)
+    region_country = models.ForeignKey(
+        Country, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.region_name
