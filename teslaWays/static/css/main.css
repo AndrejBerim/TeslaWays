@@ -124,13 +124,17 @@ ul.show {
     display: inline;
 }
 
+#newsletter {
+    height: 30px;
+    padding-left: 5px;
+}
+
 /* POCETNA */
 
 .main-content {
     max-width: 770px;
     margin-left: 460px;
     padding: 25px 20px;
-
 }
 
 .slider-container{
@@ -138,9 +142,7 @@ ul.show {
     max-width: 700px;
     width: 100%;
     height: 400px;
-    position: relative;
     overflow: hidden;
-    background-color: #000000;
     position: relative;
 }
 
@@ -157,14 +159,19 @@ ul.show {
     transition-delay: 500ms;
 }
 
-.btns-slide {
+#first .slides {
+    cursor: pointer;
+}
+
+.btn-slide {
     z-index: 1000;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+}
+
+.btn-slide.next {
+    right: 0;
 }
 
 .btn-slide {
@@ -188,6 +195,37 @@ ul.show {
     background-color: rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
+
+/* Slider overlay */
+
+.slider-container#second  {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    min-width: 100vw;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+
+.slider-container#second .slides {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-container#second img {
+    width: auto;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* .slider-container#second  */
 
 /* Map */
 
@@ -225,8 +263,11 @@ ul.show {
 .each-news {
     padding: 10px;
     margin: 20px;
+<<<<<<< HEAD
+=======
     
 
+>>>>>>> a616f508241365305b598f51b011f34795e30f6a
 }
 /* NEWLETTER BUTTON*/
 .newsletter-button {
@@ -239,6 +280,8 @@ ul.show {
     cursor: pointer;
 }
 
+<<<<<<< HEAD
+=======
 
 /* ALL NEWS FORMATING */
 .each-news {
@@ -323,6 +366,7 @@ ul.show {
 
 /*WEB RESPONSIVENESS*/
 /*
+>>>>>>> a616f508241365305b598f51b011f34795e30f6a
 @media screen and (min-width:480px) and (max-width:800px) {
     <!-- Target landscape smartphones, portrait tablets, narrow desktops -->
     .navs-wrapper {
@@ -356,7 +400,10 @@ ul.show {
         margin-right: 60px;
         margin-bottom: 50px;
     }
+<<<<<<< HEAD
+=======
 }
 */
 
 
+>>>>>>> a616f508241365305b598f51b011f34795e30f6a
