@@ -45,7 +45,12 @@
             </ul>
         </ul>
         <div class="nav-info">
-            <button class="newsletter-button">Prijavi se na Newsletter</button>
+            <p class="newsletter-notification"></p>
+            <form action="GET" class="newsletter-form">
+                <label for="newsletter"></label>
+                <input type="email" id="newsletter" placeholder="Prijavi se na newsletter">
+                <button type="submit" class="submit">Prijavi se</button>
+            </form>
             <div class="social-icons">
                 <a href="#"><i class="fa-brands fa-twitter"></i></a>
                 <a href="#"><i class="fa-brands fa-facebook"></i></a>
@@ -53,7 +58,6 @@
             <p>Tesla Ways&copy; 2022</p>
         </div>
     </nav>
-
-
-
 </div>
+
+<script src="../static/js/email-validation.js"></script>
