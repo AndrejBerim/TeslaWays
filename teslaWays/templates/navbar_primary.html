@@ -7,7 +7,7 @@
             <ul class="pages">
                 <li><a href="{% url 'main_page' %}">Početna</a></li>
                 <li><a href="#">O projektu</a></li>
-                <li><a href="#">O nama</a></li>
+                <li><a href="{% url 'about_us' %}">O nama</a></li>
                 <li><a href="{% url 'news_page' %}">Novosti i zanimljivosti</a></li>
                 <li><a href="#">Kontakt</a></li>
             </ul>
@@ -16,7 +16,6 @@
         <img class="tesla-img" src="{% static 'images\NikolaTesla.png' %}" alt="Nikola Tesla">
     </nav>
 
-<<<<<<< HEAD
     <nav class="nav-secondary">
         <h1>Srbija</h1>
         <ul class="sec-menu">
@@ -62,8 +61,6 @@
 </div>
 
 <script src="../static/js/email-validation.js"></script>
-=======
 {% include "navbar_secondary.html" %}
 
 </div>
->>>>>>> a616f508241365305b598f51b011f34795e30f6a
