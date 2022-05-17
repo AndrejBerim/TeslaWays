@@ -9,6 +9,7 @@ urlpatterns = [
     path('novosti/', views.all_news, name="news_page"),
     path('novosti/novost/<str:pk>/', views.single_news, name='single_news'),
     path('regioni/', views.all_regions, name="all_regions"),
+    path("region/<str:pk>/", views.get_region, name="region_page"),
 ]
 
 if settings.DEBUG:

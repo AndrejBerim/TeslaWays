@@ -1,7 +1,8 @@
 <nav class="nav-secondary">
     <h1>Srbija</h1>
-    {% if all_regions %}
+
         {% for ime in all_regions %}
+        <h1>{{ ime }}</h1>
         <ul class="sec-menu">
             <li class="city"><i class="fa-solid fa-angle-right"></i>{{ ime.region_name }}</li>
             <ul>
@@ -12,7 +13,6 @@
         </ul>
     {% endfor %}
 
-    {% endif %}
     
 
     <ul class="sec-menu">
