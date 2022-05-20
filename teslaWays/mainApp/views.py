@@ -41,11 +41,6 @@ def all_regions(request):
     all_region = Region.objects.all().values()
 
     context = {
-<<<<<<< HEAD
-        'all_region': regions,
-    }
-    return render(request, 'regioni.html', context)
-=======
         'all_region': all_region,
     }
     return render(request, 'all_regions.html', context)
@@ -57,4 +52,3 @@ def get_region(request, pk):
         'region': region,
     }
     return render(request, "all_regions.html", context)
->>>>>>> andrej
