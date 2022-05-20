@@ -10,6 +10,11 @@ def main_page(request):
     return render(request, 'pocetna.html', context)
 
 
+def about_us(request):
+    context = {}
+    return render(request, 'o_nama.html', context)
+
+
 def all_news(request):
     all_news = News.objects.all()
 
