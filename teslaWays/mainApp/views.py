@@ -38,9 +38,23 @@ def countries(request):
 
 
 def all_regions(request):
-    regions = Region.objects.all()
+    all_region = Region.objects.all().values()
 
     context = {
+<<<<<<< HEAD
         'all_region': regions,
     }
     return render(request, 'regioni.html', context)
+=======
+        'all_region': all_region,
+    }
+    return render(request, 'all_regions.html', context)
+
+
+def get_region(request, pk):
+    region = Region.objects.get(id=pk)
+    context = {
+        'region': region,
+    }
+    return render(request, "all_regions.html", context)
+>>>>>>> andrej

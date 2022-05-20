@@ -1,5 +1,20 @@
 <nav class="nav-secondary">
     <h1>Srbija</h1>
+
+        {% for ime in all_regions %}
+        <h1>{{ ime }}</h1>
+        <ul class="sec-menu">
+            <li class="city"><i class="fa-solid fa-angle-right"></i>{{ ime.region_name }}</li>
+            <ul>
+                <li><a href="#">Šta posetiti</a></li>
+                <li><a href="#">Gde jesti</a></li>
+                <li><a href="#">Gde spavati</a></li>
+            </ul>
+        </ul>
+    {% endfor %}
+
+    
+
     <ul class="sec-menu">
         <li class="city"><i class="fa-solid fa-angle-right"></i>Beograd</li>
         <ul>
