@@ -1,19 +1,10 @@
 {% extends "main.html" %}
-{% load static %}
 
-{% block title %}
-Pocetna
-{% endblock title %}
+{% block title %}Pocetna{% endblock title %}
 
 {% block content %}
-
     <main class="main-content">
         {% include 'slider.html' %}
-
-        {% include 'map.html' %}
+        <!-- {% include 'map.html' %} -->
     </main>
-
-    <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-    <script src="../static/js/map.js"></script>
-
 {% endblock content %}

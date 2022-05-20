@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
 
+    'rest_framework',
     'django_extensions',
     'mainApp.apps.MainappConfig',
 ]
