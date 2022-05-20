@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_extensions',
     'mainApp.apps.MainappConfig',
+    'map.apps.MapConfig',
 ]
 
 MIDDLEWARE = [
@@ -126,15 +127,15 @@ USE_I18N = True
 USE_TZ = True
 
 
-# DJANGO REST FRAMEWORK
+# # DJANGO REST FRAMEWORK
 
-REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
-}
+# REST_FRAMEWORK = {
+#     # Use Django's standard `django.contrib.auth` permissions,
+#     # or allow read-only access for unauthenticated users.
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+#     ]
+# }
 
 
 # Static files (CSS, JavaScript, Images)
