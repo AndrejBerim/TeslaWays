@@ -1,6 +1,4 @@
 from django.db import models
-from map.models import Place
-
 
 # Create your models here.
 
@@ -14,9 +12,6 @@ class Member(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     is_active = models.BooleanField(default=True)
-
-    class Meta:
-        ordering = ['-date_updated']
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
@@ -50,7 +45,7 @@ class City(models.Model):
         Country, on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
-        return str(self.city_name)
+        return self.city_name
 
 
 class News(models.Model):
@@ -60,15 +55,12 @@ class News(models.Model):
         upload_to='staticfiles/img', null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
-    place_of_news = models.ForeignKey(
-        "map.Place", on_delete=models.CASCADE, null=True, blank=True)
+    place_of_news = models.ManyToManyField(
+        "map.Place", related_name="place_news")
     news_region = models.ForeignKey(
         Region, on_delete=models.CASCADE, blank=True, null=True)
     news_city = models.ForeignKey(
         City, on_delete=models.CASCADE, blank=True, null=True)
-
-    class Meta:
-        ordering = ['-date_updated']
 
     def __str__(self):
         return self.title
