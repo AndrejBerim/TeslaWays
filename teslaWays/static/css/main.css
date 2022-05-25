@@ -263,11 +263,8 @@ ul.show {
 .each-news {
     padding: 10px;
     margin: 20px;
-<<<<<<< HEAD
-=======
     
 
->>>>>>> a616f508241365305b598f51b011f34795e30f6a
 }
 /* NEWLETTER BUTTON*/
 .newsletter-button {
@@ -280,8 +277,6 @@ ul.show {
     cursor: pointer;
 }
 
-<<<<<<< HEAD
-=======
 
 /* ALL NEWS FORMATING */
 .each-news {
@@ -366,7 +361,6 @@ ul.show {
 
 /*WEB RESPONSIVENESS*/
 /*
->>>>>>> a616f508241365305b598f51b011f34795e30f6a
 @media screen and (min-width:480px) and (max-width:800px) {
     <!-- Target landscape smartphones, portrait tablets, narrow desktops -->
     .navs-wrapper {
@@ -400,10 +394,7 @@ ul.show {
         margin-right: 60px;
         margin-bottom: 50px;
     }
-<<<<<<< HEAD
-=======
 }
 */
 
 
->>>>>>> a616f508241365305b598f51b011f34795e30f6a

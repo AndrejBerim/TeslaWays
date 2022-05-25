@@ -1,5 +1,4 @@
 from django.shortcuts import render
-# from geopy.geocoders import Nominatim
 from .models import *
 from map.models import Place
 # Create your views here.
