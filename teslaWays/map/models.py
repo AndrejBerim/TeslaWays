@@ -1,5 +1,6 @@
 from django.db import models
 from multiselectfield import MultiSelectField
+from mainApp.models import *
 
 
 # Create your models here.
@@ -22,12 +23,13 @@ class Place(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     place_region = models.ManyToManyField(
-        "mainApp.Region", related_name="region_place")
+        Region, related_name="region_place")
     place_city = models.ManyToManyField(
-        "mainApp.City", related_name="city_place")
+        City, related_name="city_place")
 
     class Meta:
-        ordering = ['-date_updated']
+        verbose_name = "Place"
+        verbose_name_plural = "Places"
 
     def __str__(self):
         return self.name

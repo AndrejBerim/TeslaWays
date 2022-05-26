@@ -1,7 +1,7 @@
-from django.shortcuts import render
-# from geopy.geocoders import Nominatim
-from .models import *
+from django.shortcuts import render, redirect
+from . models import *
 from map.models import Place
+
 # Create your views here.
 
 
@@ -53,3 +53,14 @@ def get_region(request, pk):
         'region': region,
     }
     return render(request, "all_regions.html", context)
+
+
+def about_us(request):
+    info_data = AboutUs.objects.all()
+    image_data = Image.objects.all()
+
+    context = {
+        'image_data': image_data,
+        'info_data': info_data,
+    }
+    return render(request, 'o_nama.html', context)
