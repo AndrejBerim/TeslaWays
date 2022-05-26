@@ -1,5 +1,7 @@
+from dataclasses import fields
 from django.db import models
-
+from django.utils.safestring import mark_safe
+from PIL import Image as Im
 
 # Create your models here.
 
@@ -14,6 +16,10 @@ class Member(models.Model):
     date_updated = models.DateTimeField(auto_now=True)
     is_active = models.BooleanField(default=True)
 
+    class Meta:
+        verbose_name = "Member"
+        verbose_name_plural = "Members"
+
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
 
@@ -23,15 +29,23 @@ class Country(models.Model):
         max_length=50, null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        verbose_name = "Country"
+        verbose_name_plural = "Countries"
+
     def __str__(self):
         return str(self.country_name)
 
 
 class Region(models.Model):
     region_name = models.CharField(max_length=50)
-    date_created = models.DateTimeField(auto_now=True)
+    date_created = models.DateTimeField(auto_now_add=True)
     region_country = models.ForeignKey(
         Country, on_delete=models.CASCADE, null=True, blank=True)
+
+    class Meta:
+        verbose_name = "Region"
+        verbose_name_plural = "Regions"
 
     def __str__(self):
         return self.region_name
@@ -39,14 +53,18 @@ class Region(models.Model):
 
 class City(models.Model):
     city_name = models.CharField(max_length=50,  null=True, blank=True)
-    date_created = models.DateTimeField(auto_now=True)
+    date_created = models.DateTimeField(auto_now_add=True)
     city_region = models.ForeignKey(
         Region, on_delete=models.CASCADE, null=True, blank=True)
     city_country = models.ForeignKey(
         Country, on_delete=models.CASCADE, blank=True, null=True)
 
+    class Meta:
+        verbose_name = "City"
+        verbose_name_plural = "Cities"
+
     def __str__(self):
-        return str(self.city_name)
+        return self.city_name
 
 
 class News(models.Model):
@@ -62,6 +80,40 @@ class News(models.Model):
         Region, on_delete=models.CASCADE, blank=True, null=True)
     news_city = models.ForeignKey(
         City, on_delete=models.CASCADE, blank=True, null=True)
+
+    class Meta:
+        verbose_name = "News"
+        verbose_name_plural = "News"
+
+    def __str__(self):
+        return self.title
+
+
+class Image(models.Model):
+    title = models.CharField(max_length=50)
+    photo = models.ImageField(upload_to="uploads")
+    date_created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Image"
+        verbose_name_plural = "Images"
+
+    def image_tag(self):
+        return mark_safe('<img src="/../../media/%s" width="150" height="150" />' % (self.photo))
+
+    def __str__(self):
+        return self.title
+
+
+class AboutUs(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    date_created = models.DateTimeField(auto_now_add=True)
+    images = models.ForeignKey(
+        Image, on_delete=models.CASCADE, blank=True, null=True)
+
+    class Meta:
+        verbose_name = "About Us"
 
     def __str__(self):
         return self.title

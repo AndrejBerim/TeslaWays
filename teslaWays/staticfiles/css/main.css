@@ -1,0 +1,311 @@
+:root {
+    --black: #000000;
+    --white: #FFFFFF;
+    --gray: #E5E5E5;
+    --dark-blue: #0A2E36;
+    --light-orange: #F9C784;
+    --dark-orange: #F0A202;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    /* font-family: 'Kaushan Script', cursive; */
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+html, body {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+}
+
+/* NAVIGATION */
+
+.navs-wrapper {
+    height: 100%;
+    display: flex;
+    position: fixed;
+}
+
+nav {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 230px;
+    padding: 25px 35px;
+}
+
+.nav-primary {
+    z-index: 2;
+    justify-content: space-between;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.2) 100%), #0A2E36;
+    box-shadow: 6px 0px 8px rgba(0, 0, 0, 0.2)
+}
+
+.pages {
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pages a {
+    font-size: 16px;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.tesla-img {
+    margin: 0px -35px -25px;
+}
+
+.logo {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.nav-secondary {
+    background-color: var(--gray);
+}
+
+.nav-secondary h1 {
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.sec-menu {
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-transform: uppercase;
+    color: var(--dark-blue);
+}
+
+.sec-menu ul {
+    display: none;
+    margin-top: 6px;
+    margin-bottom: 20px;
+}
+
+.sec-menu ul li {
+    margin-bottom: 6px;
+}
+
+.sec-menu ul li a {
+    font-size: 16px;
+    margin-left: 15px;
+    color: var(--dark-blue);
+}
+
+.city {
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+.city:hover {
+    font-size: large;
+    font-weight: bolder;
+}
+
+.nav-info {
+    margin-top: auto;
+}
+
+ul.show {
+    display: inline;
+}
+
+#newsletter {
+    height: 30px;
+    padding-left: 5px;
+}
+
+/* POCETNA */
+
+.main-content {
+    max-width: 770px;
+    margin-left: 460px;
+    padding: 25px 20px;
+}
+
+.slider-container{
+    min-width: 500px;
+    max-width: 700px;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    width: 100%;
+    height: 350px;
+    position: relative;
+}
+
+.slides img {
+    width: 100%;
+    object-fit: scale-down;
+    transition: all 0.5s ease-in-out;
+    transition-delay: 500ms;
+}
+
+#first .slides {
+    cursor: pointer;
+}
+
+.btn-slide {
+    z-index: 1000;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.btn-slide.next {
+    right: 0;
+}
+
+.btn-slide {
+    width: 30px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: none;
+    cursor: pointer;
+}
+
+.bullets {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.bullet {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* Slider overlay */
+
+.slider-container#second  {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    min-width: 100vw;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+
+.slider-container#second .slides {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-container#second img {
+    width: auto;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* .slider-container#second  */
+
+/* Map */
+
+.openstreet-map {
+    position: relative;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+.map-filters {
+    height: 120px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    right: 0;
+    bottom: 50%;
+    transform: translateY(50%);
+}
+
+.openstreet-map button {
+    z-index: 1000;
+    width: 120px;
+    height: 30px;
+    background-color: var(--dark-blue);
+    color: white;
+    cursor: pointer;
+}
+
+/*VESTI*/
+
+.each-news {
+    padding: 10px;
+    margin: 20px;
+}
+/* NEWLETTER BUTTON*/
+.newsletter-button {
+    background-color: #0A2E36;
+    color: white;
+    height: 30px;
+    width: 160px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+@media screen and (min-width:480px) and (max-width:800px) {
+ 
+    .navs-wrapper {
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-primary {
+
+        position: relative;
+        height: 73px;
+        width: 100%;
+    }
+    .nav-secondary {
+        position: absolute;
+        height: 143px;
+        width: 100%;
+        margin-top: 73px;
+    }
+    .tesla-img {
+        display: none;
+    }
+    .slides {
+        width: 100%;
+        height: 350px;
+        position: absolute;
+    }
+
+    .single_news {
+        margin-top: 50px;
+        margin-left: 500px;
+        margin-right: 60px;
+        margin-bottom: 50px;
+    }
+}

@@ -1,17 +1,13 @@
-from django.shortcuts import render
-from .models import *
+from django.shortcuts import render, redirect
+from . models import *
 from map.models import Place
+
 # Create your views here.
 
 
 def main_page(request):
     context = {}
     return render(request, 'pocetna.html', context)
-
-
-def about_us(request):
-    context = {}
-    return render(request, 'o_nama.html', context)
 
 
 def all_news(request):
@@ -57,3 +53,14 @@ def get_region(request, pk):
         'region': region,
     }
     return render(request, "all_regions.html", context)
+
+
+def about_us(request):
+    info_data = AboutUs.objects.all()
+    image_data = Image.objects.all()
+
+    context = {
+        'image_data': image_data,
+        'info_data': info_data,
+    }
+    return render(request, 'o_nama.html', context)

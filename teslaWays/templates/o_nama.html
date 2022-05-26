@@ -2,3 +2,15 @@
 {% load static %}
 
 {% block title %} O nama {% endblock title %}
+
+{% block content %}
+
+    {% for dat in info_data %}
+        {{dat.title}}
+    {% endfor %}
+
+    {% for data in image_data %}
+        {{data.title}}
+    {% endfor %}
+
+{% endblock content %}
