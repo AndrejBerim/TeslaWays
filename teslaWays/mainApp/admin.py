@@ -8,19 +8,12 @@ admin.site.register(News)
 admin.site.register(Region)
 admin.site.register(City)
 admin.site.register(Country)
-admin.site.register(AboutUs)
-admin.site.register(Image)
+# admin.site.register(AboutUs)
+# admin.site.register(Image)
 
 
-# class AboutUsAdmin(admin.ModelAdmin):
-#     list_display = ['images', 'title', 'date_created']
+class AboutUsAdmin(admin.ModelAdmin):
+    list_display = ['title', 'date_created']
 
 
-# admin.site.register(AboutUs, AboutUsAdmin)
-
-
-# class ImageAdmin(admin.ModelAdmin):
-#     list_display = ['title', 'photo', 'date_created']
-
-
-# admin.site.register(Image, ImageAdmin)
+admin.site.register(AboutUs, AboutUsAdmin)

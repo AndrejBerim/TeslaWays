@@ -1,7 +1,4 @@
-from dataclasses import fields
 from django.db import models
-from django.utils.safestring import mark_safe
-from PIL import Image as Im
 
 # Create your models here.
 
@@ -75,7 +72,7 @@ class News(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     place_of_news = models.ManyToManyField(
-        "map.Place", related_name="news_place")
+        "map.Place", null=True, blank=True, related_name="news_place")
     news_region = models.ForeignKey(
         Region, on_delete=models.CASCADE, blank=True, null=True)
     news_city = models.ForeignKey(
@@ -89,28 +86,16 @@ class News(models.Model):
         return self.title
 
 
-class Image(models.Model):
-    title = models.CharField(max_length=50)
-    photo = models.ImageField(upload_to="uploads")
-    date_created = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        verbose_name = "Image"
-        verbose_name_plural = "Images"
-
-    def image_tag(self):
-        return mark_safe('<img src="/../../media/%s" width="150" height="150" />' % (self.photo))
-
-    def __str__(self):
-        return self.title
-
-
 class AboutUs(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
     date_created = models.DateTimeField(auto_now_add=True)
-    images = models.ForeignKey(
-        Image, on_delete=models.CASCADE, blank=True, null=True)
+    image_one = models.ImageField(
+        upload_to='uploads/', blank=True, null=True, verbose_name="image 1", help_text="text")
+    image_two = models.ImageField(
+        upload_to='uploads/', blank=True, null=True, verbose_name="image 2", help_text="text")
+    image_three = models.ImageField(
+        upload_to='uploads/', blank=True, null=True, verbose_name="image 3", help_text="text")
 
     class Meta:
         verbose_name = "About Us"

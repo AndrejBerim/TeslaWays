@@ -57,10 +57,9 @@ def get_region(request, pk):
 
 def about_us(request):
     info_data = AboutUs.objects.all()
-    image_data = Image.objects.all()
+    print(info_data)
 
     context = {
-        'image_data': image_data,
         'info_data': info_data,
     }
     return render(request, 'o_nama.html', context)
