@@ -71,8 +71,6 @@ class News(models.Model):
         upload_to='staticfiles/img', null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
-    place_of_news = models.ManyToManyField(
-        "map.Place", null=True, blank=True, related_name="news_place")
     news_region = models.ForeignKey(
         Region, on_delete=models.CASCADE, blank=True, null=True)
     news_city = models.ForeignKey(

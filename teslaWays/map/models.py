@@ -16,6 +16,8 @@ class Place(models.Model):
     address = models.CharField(max_length=60, null=True, blank=True)
     website = models.CharField(max_length=40, null=True, blank=True)
     description = models.TextField(default="Opis")
+    image_place = models.ImageField(
+        upload_to='staticfiles/img', null=True, blank=True)
     type_of_place = MultiSelectField(
         choices=TYPE_CHOICES, max_choices=3, max_length=20, null=True, blank=True)
     longitude = models.FloatField(default=20.468565, blank=True)

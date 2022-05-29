@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="{% static 'css/about_us.css' %}">
 {% endblock cssFiles %}
 
+
+
+
+
+
 {% block content %}
 <div class="main-content">
     {% include 'slider.html' %}
@@ -16,19 +21,21 @@
 
 
 
-    {% for d in info_data %}
+    {% for data in info_data %}
 
     <div class="about_us">
         <!-- <h1 class="o_nama">O nama</h1> -->
         <div class="about_us_content">
-            <h2 class="about_us_title">{{ d.title }}</h2>
-            <p class="about_us_paragraph">{{ d.content }}</p>
+            <h2 class="about_us_title">{{ data.title }}</h2>
+            <p class="about_us_paragraph">{{ data.content }}</p>
         </div>
-
+        <img src="{{ data.image_one.url }}" width=200px  alt="Not found">
+        <img src="{{ data.image_two.url }}" width=200px  alt="Not found">
     </div>
-<div>
+
+
+    
     
     {% endfor %}
-
-
+<div>
 {% endblock content %}
