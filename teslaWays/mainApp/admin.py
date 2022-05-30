@@ -3,13 +3,7 @@ from .models import *
 
 # Register your models here.
 
-admin.site.register(Member)
-admin.site.register(News)
-admin.site.register(Region)
-admin.site.register(City)
-admin.site.register(Country)
-# admin.site.register(AboutUs)
-# admin.site.register(Image)
+# About Us
 
 
 class AboutUsAdmin(admin.ModelAdmin):
@@ -17,3 +11,37 @@ class AboutUsAdmin(admin.ModelAdmin):
 
 
 admin.site.register(AboutUs, AboutUsAdmin)
+
+# News
+
+
+class NewsAdmin(admin.ModelAdmin):
+    list_display = ['title', 'date_created', 'news_image']
+
+
+admin.site.register(News, NewsAdmin)
+
+# Region
+
+
+class RegionAdmin(admin.ModelAdmin):
+    list_display = ['region_name', 'date_created', 'region_country']
+
+
+admin.site.register(Region, RegionAdmin)
+
+# City
+
+
+class CityAdmin(admin.ModelAdmin):
+    list_display = ['city_name', 'city_region', 'date_created', 'city_country']
+
+
+admin.site.register(City, CityAdmin)
+
+# Other models
+
+
+admin.site.register(Country)
+
+admin.site.register(Member)
