@@ -1,12 +1,27 @@
 from django.contrib import admin
-from .models import Place
+from django_admin_geomap import ModelAdmin
+from . models import Place, Location
 
 # Register your models here.
 
-#Place
+# Place
+
+
 class PlaceAdmin(admin.ModelAdmin):
-    list_display = ['name', 'address', 'longitude','latitude','website','type_of_place',]
+    list_display = ['name', 'address', 'longitude',
+                    'latitude', 'website', 'type_of_place', ]
+
 
 admin.site.register(Place, PlaceAdmin)
 
-# admin.site.register(Place)
+
+class Admin(ModelAdmin):
+    geomap_field_longitude = "id_lon"
+    geomap_field_latitude = "id_lat"
+    geomap_default_longitude = "44.3"
+    geomap_default_latitude = "20.4"
+    geomap_item_zoom = "10"
+    geomap_hright = "300px"
+
+
+admin.site.register(Location, Admin)
