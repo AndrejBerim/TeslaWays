@@ -14,15 +14,14 @@ class Place(models.Model):
         ('attraction', 'attraction')
     )
     name = models.CharField(max_length=40)
-    address = models.CharField(max_length=60, null=True, blank=True)
+    location = models.ForeignKey(
+        'Location', on_delete=models.CASCADE, blank=True, null=True)
     website = models.CharField(max_length=40, null=True, blank=True)
     description = models.TextField(default="Opis")
     image_place = models.ImageField(
         upload_to='staticfiles/img', null=True, blank=True)
     type_of_place = MultiSelectField(
         choices=TYPE_CHOICES, max_choices=3, max_length=20, null=True, blank=True)
-    longitude = models.FloatField()
-    latitude = models.FloatField()
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     place_region = models.ManyToManyField(
@@ -39,12 +38,12 @@ class Place(models.Model):
 
 
 class Location(models.Model, GeoItem):
-    name = models.CharField(max_length=100, null=True, blank=True)
+    address = models.CharField(max_length=100, null=True, blank=True)
     lon = models.FloatField(null=True, blank=True)  # longitude
     lat = models.FloatField(null=True, blank=True)  # latitude
 
     def __str__(self):
-        return str(self.name)
+        return str(self.address)
 
     @property
     def geomap_longitude(self):

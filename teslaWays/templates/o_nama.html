@@ -29,8 +29,19 @@
             <h2 class="about_us_title">{{ data.title }}</h2>
             <p class="about_us_paragraph">{{ data.content }}</p>
         </div>
-        <img src="{{ data.image_one.url }}" width=200px  alt="Not found">
-        <img src="{{ data.image_two.url }}" width=200px  alt="Not found">
+
+        {% if data.image_one.url is not null  %}
+            <img src="{{ data.image_one.url }}" width=200px  alt="Not found">
+        {% endif %}
+
+        {% if data.image_two.url is not null %}
+            <img src="{{ data.image_two.url }}" width=200px  alt="Not found">
+        {% endif %}
+
+        {% if data.image_three.url is not null  %}
+            <img src="{{ data.image_three.url }}" width=200px  alt="Not found">
+        {% endif %}
+        
     </div>
 
 

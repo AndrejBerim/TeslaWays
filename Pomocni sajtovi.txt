@@ -1,0 +1,1 @@
+https://github.com/vb64/django.admin.geomap

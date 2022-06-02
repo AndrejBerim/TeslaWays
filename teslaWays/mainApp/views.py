@@ -6,7 +6,10 @@ from map.models import Place
 
 
 def main_page(request):
-    context = {}
+    all_region = Region.objects.all()
+    context = {
+        'all_region': all_region,
+    }
     return render(request, 'pocetna.html', context)
 
 
@@ -39,12 +42,13 @@ def countries(request):
 
 
 def all_regions(request):
-    all_region = Region.objects.all().values()
+    all_region = Region.objects.all()
+    print(all_region)
 
     context = {
         'all_region': all_region,
     }
-    return render(request, 'all_regions.html', context)
+    return render(request, 'navbar_secondary.html', context)
 
 
 def get_region(request, pk):

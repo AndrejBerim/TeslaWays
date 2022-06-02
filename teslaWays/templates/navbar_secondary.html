@@ -1,35 +1,16 @@
+<nav class="nav-secondary">
+        <h1>Srbija</h1> 
 
-
-
-
-    <nav class="nav-secondary">
-        <h1>Srbija</h1>
-        <ul class="sec-menu">
-            <li class="city"><i class="fa-solid fa-angle-right"></i>Beograd</li>
-            <ul>
-                <li><a href="#">Šta posetiti</a></li>
-                <li><a href="#">Gde jesti</a></li>
-                <li><a href="#">Gde spavati</a></li>
-            </ul>
-            <li class="city"><i class="fa-solid fa-angle-right"></i>Zapadna Srbija</li>
-            <ul>
-                <li><a href="#">Šta posetiti</a></li>
-                <li><a href="#">Gde jesti</a></li>
-                <li><a href="#">Gde spavati</a></li>
-            </ul>
-            <li class="city"><i class="fa-solid fa-angle-right"></i>Istočna Srbija</li>
-            <ul>
-                <li><a href="#">Šta posetiti</a></li>
-                <li><a href="#">Gde jesti</a></li>
-                <li><a href="#">Gde spavati</a></li>
-            </ul>
-            <li class="city"><i class="fa-solid fa-angle-right"></i>Vojvodina</li>
-            <ul>
-                <li><a href="#">Šta posetiti</a></li>
-                <li><a href="#">Gde jesti</a></li>
-                <li><a href="#">Gde spavati</a></li>
-            </ul>
+    <ul class="sec-menu"> 
+        {% for ime in all_region %}
+        <li class="city"><i class="fa-solid fa-angle-right"></i>{{ ime.region_name }}</li>
+        <ul>
+            <li><a href="#">Šta posetiti</a></li>
+            <li><a href="#">Gde jesti</a></li>
+            <li><a href="#">Gde spavati</a></li>
         </ul>
+        {% endfor %}
+    </ul>
         <div class="nav-info">
             <p class="newsletter-notification"></p>
             <form action="GET" class="newsletter-form">
