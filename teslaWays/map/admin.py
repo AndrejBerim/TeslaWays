@@ -2,6 +2,7 @@ from django.contrib import admin
 from django_admin_geomap import ModelAdmin
 from . models import Place, Location
 
+
 # Register your models here.
 
 # Place
@@ -24,3 +25,10 @@ class Admin(ModelAdmin):
 
 
 admin.site.register(Location, Admin)
+
+
+# class LocationAdmin(admin.ModelAdmin):
+#     list_display = ['address', 'lon', 'lat']
+
+
+# admin.site.register(Location, LocationAdmin)
