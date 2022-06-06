@@ -11,6 +11,7 @@ urlpatterns = [
     path('regioni/', views.all_regions, name="all_regions"),
     path("region/<str:pk>/", views.get_region, name="region_page"),
     path('o_nama/', views.about_us, name="about_us_page"),
+    path('map2/', views.get_address, name="map2_page")
 ]
 
 if settings.DEBUG:

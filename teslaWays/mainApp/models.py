@@ -97,6 +97,7 @@ class AboutUs(models.Model):
 
     class Meta:
         verbose_name = "About Us"
+        verbose_name_plural = "About Us"
 
     def __str__(self):
         return self.title
